@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'longlist.dart';
 
 class DropDownButton extends StatefulWidget {
   @override
@@ -24,6 +27,38 @@ class _DropDownButtonState extends State<DropDownButton> {
             alignment: Alignment.center,
             child: _builDropDownButton(),
           ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: SizedBox(
+                    height: 46,
+                    child: RaisedButton(
+                      elevation: 1,
+                      highlightElevation: 3,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LongListScreen(),
+                            ));
+                      },
+                      child: Text(
+                        'Next',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      color: Colors.blue[400],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -43,7 +78,10 @@ class _DropDownButtonState extends State<DropDownButton> {
       leading: InkWell(
         customBorder: new CircleBorder(),
         onTap: () {
-          debugPrint('Click');
+
+
+          //finish app
+          SystemNavigator.pop();
         },
         child: Icon(
           Icons.arrow_back_ios,
@@ -93,5 +131,4 @@ class _DropDownButtonState extends State<DropDownButton> {
       elevation: 1,
     );
   }
-
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class LongListScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _LongListScreenState createState() => _LongListScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _LongListScreenState extends State<LongListScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
       //body
       body: _getListView(),
 
-
       //floating button
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -35,8 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
         //shadow 2
         elevation: 2,
       ),
-
-
     );
   }
 }
